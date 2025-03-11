@@ -29,9 +29,10 @@
                 p1.style.left = `${posição}px`;
             } else if (tecla === "z") {
                 setInterval(async () => {
+                    console.log("nova posição")
                     const posiãoAtual = await fetch("/posições").then(r => r.json())
                     p1.style.left = `${posição}px`
-                }, 100);
+                }, 500);
             }
         })
 
