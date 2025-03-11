@@ -12,9 +12,11 @@ const servidor = http.createServer((pedido, resposta) => {
 
     switch (url) {
         case "/":
+            resposta.writeHead(200, { "Content-Type": "text/html" })
             resposta.end(fs.readFileSync("./index.html"))
             break;
         case "/style.css":
+            resposta.writeHead(200, { "Content-Type": "text/css" })
             resposta.end(fs.readFileSync("./style.css"))
             break;
         case "/p1Direita":
