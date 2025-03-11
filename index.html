@@ -29,7 +29,7 @@
                 p1.style.left = `${posição}px`;
             } else if (tecla === "z") {
                 setInterval(async () => {
-                    console.log("nova posição")
+                    console.log("nova posição:")
                     const posiçãoAtual = await fetch("/pos").then(r => r.json())
                     console.log(posiçãoAtual)
                     p1.style.left = `${posiçãoAtual}px`

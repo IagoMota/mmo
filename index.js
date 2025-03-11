@@ -29,7 +29,7 @@ const servidor = http.createServer((pedido, resposta) => {
             resposta.writeHead(200, { "Content-Type": "application/json" })
             resposta.end(JSON.stringify(positions.p1))
             break;
-        case "/posições":
+        case "/pos":
             resposta.writeHead(200, { "Content-Type": "application/json" })
             resposta.end(JSON.stringify(positions.p1))
             break;
