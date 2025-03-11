@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    gap: 4rem;
+}
+
+#p1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    background-color: lightblue;
+    border: solid black 2px;
+}

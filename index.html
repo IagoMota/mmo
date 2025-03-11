@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>MMO</title>
+</head>
+
+<body>
+    <div id="p1"></div>
+
+    <script>
+        const p1 = document.querySelector("#p1");
+        let posição = 0;
+
+
+        window.addEventListener("keyup", async (e) => {
+            const tecla = e.key;
+            if (tecla === "d") {
+                const resposta = await fetch("/p1Direita").then(r => r.json());
+                posição = resposta;
+                p1.style.left = `${posição}px`;
+                return;
+            } else if (tecla === "a") {
+                const resposta = await fetch("/p1Esquerda").then(r => r.json());
+                posição = resposta;
+                p1.style.left = `${posição}px`;
+            } else if (tecla === "z") {
+                setInterval(async () => {
+                    const posiãoAtual = await fetch("/posições").then(r => r.json())
+                    p1.style.left = `${posição}px`
+                }, 100);
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
