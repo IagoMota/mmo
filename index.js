@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const port = 8080;
+const port = process.env.port || 8080;
 
 const positions = {
     p1: 0,
@@ -37,6 +37,6 @@ const servidor = http.createServer((pedido, resposta) => {
 });
 
 
-servidor.listen(port, () => {
+servidor.listen(port,"0.0.0.0", () => {
     console.log("http://localhost:8080")
 });
